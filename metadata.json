@@ -1,0 +1,8 @@
+{
+  "name": "Earthy",
+  "description": "An AI-powered smart home energy optimization platform designed to help households understand, reduce, and optimize electricity consumption.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

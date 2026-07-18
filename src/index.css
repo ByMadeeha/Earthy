@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  .animate-slow-spin {
+    animation: spin 140s linear infinite;
+  }
+  .animate-reverse-slow-spin {
+    animation: reverse-spin 190s linear infinite;
+  }
+  .animate-earth-glow {
+    animation: pulse-glow 8s ease-in-out infinite alternate;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.1);
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(16, 185, 129, 0.4);
+  }
+}
+
+@keyframes reverse-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 75px rgba(56, 189, 248, 0.35);
+  }
+}
+
+/* White mode / Light mode theme overrides */
+.white-mode {
+  background-color: #f8fafc !important; /* slate-50 */
+  color: #0f172a !important; /* slate-900 */
+}
+
+/* Background overrides */
+.white-mode .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+.white-mode .bg-slate-950\/65 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+.white-mode .bg-slate-950\/40 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+.white-mode .bg-slate-950\/70 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.white-mode .bg-gradient-to-tr.from-sky-950\/40 {
+  background-image: linear-gradient(to top right, rgba(56, 189, 248, 0.08), rgba(16, 185, 129, 0.05), #f8fafc) !important;
+}
+.white-mode .bg-gradient-to-b.from-emerald-950\/25 {
+  background-image: linear-gradient(to bottom, rgba(16, 185, 129, 0.06), rgba(255, 255, 255, 0.85)) !important;
+}
+.white-mode .bg-emerald-950\/20,
+.white-mode .bg-emerald-950\/25,
+.white-mode .bg-emerald-950\/40,
+.white-mode .bg-emerald-950\/10 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+.white-mode .bg-sky-950\/20,
+.white-mode .bg-sky-950\/30 {
+  background-color: rgba(14, 165, 233, 0.08) !important;
+}
+.white-mode .bg-slate-900\/40,
+.white-mode .bg-slate-900\/20,
+.white-mode .bg-slate-900 {
+  background-color: #f1f5f9 !important; /* slate-100 */
+}
+
+/* Borders */
+.white-mode .border-emerald-500\/10,
+.white-mode .border-emerald-500\/15,
+.white-mode .border-emerald-500\/20,
+.white-mode .border-emerald-500\/5,
+.white-mode .border-emerald-500\/35 {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.white-mode .border-slate-900,
+.white-mode .border-slate-800 {
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+/* Text colors */
+.white-mode .text-emerald-100 {
+  color: #065f46 !important; /* emerald-800 */
+}
+.white-mode .text-emerald-300 {
+  color: #047857 !important; /* emerald-700 */
+}
+.white-mode .text-emerald-400 {
+  color: #059669 !important; /* emerald-600 */
+}
+.white-mode .text-sky-100 {
+  color: #1e293b !important; /* slate-800 */
+}
+.white-mode .text-sky-200 {
+  color: #334155 !important; /* slate-700 */
+}
+.white-mode .text-sky-200\/60,
+.white-mode .text-sky-200\/50,
+.white-mode .text-sky-200\/70 {
+  color: #475569 !important; /* slate-600 */
+}
+.white-mode .text-sky-300 {
+  color: #0369a1 !important; /* sky-700 */
+}
+.white-mode .text-sky-400 {
+  color: #0284c7 !important; /* sky-600 */
+}
+.white-mode .text-emerald-300\/60 {
+  color: rgba(4, 120, 87, 0.7) !important;
+}
+.white-mode .text-slate-400,
+.white-mode .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Toggle Switches */
+.white-mode .bg-slate-950.shadow-md {
+  background-color: #ffffff !important;
+}
+
+/* Custom adjustments for charts & SVGs in white mode */
+.white-mode .recharts-cartesian-grid-horizontal line,
+.white-mode .recharts-cartesian-grid-vertical line {
+  stroke: rgba(15, 23, 42, 0.1) !important;
+}
+.white-mode .recharts-legend-item-text {
+  color: #0f172a !important;
+}
+
+/* Chat bubble styling for light mode */
+.white-mode .bg-emerald-950\/30 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+.white-mode .bg-slate-900\/50 {
+  background-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+/* SVG Overrides for Floorplan */
+.white-mode svg rect:not([fill="url(#forest-glow)"]):not([fill="url(#ocean-glow)"]) {
+  fill: rgba(241, 245, 249, 0.8) !important;
+}
+.white-mode svg text:not([class*="text-emerald-400"]):not([class*="text-sky-400"]):not([class*="text-teal-400"]):not([class*="text-cyan-400"]):not([class*="text-amber-400"]) {
+  fill: #1e293b !important;
+}
+
+/* SVG Overrides for Architecture System Flow diagram */
+.white-mode circle[fill="#022c22"] {
+  fill: #d1fae5 !important; /* emerald-100 */
+}
+.white-mode circle[fill="#0c4a6e"] {
+  fill: #e0f2fe !important; /* sky-100 */
+}
+.white-mode circle[fill="#1e1b4b"] {
+  fill: #f3e8ff !important; /* purple-100 */
+}
+.white-mode circle[stroke="#1e293b"] {
+  stroke: #cbd5e1 !important;
+}
+.white-mode text.fill-sky-200\/50 {
+  fill: #475569 !important;
+}
+.white-mode text.fill-emerald-300 {
+  fill: #065f46 !important;
+}
+
+/* Scrollbar adjustment */
+.white-mode .scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05) !important;
+}
+
+
